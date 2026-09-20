@@ -1,5 +1,8 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
+import WishBtn from '@/component/bookDetails/WishBtn';
+import ReadBtn from '@/component/bookDetails/ReadBtn';
+
 
 const getBook = async (id: string) => {
     // Fetch book details from an API or database using the id
@@ -94,12 +97,8 @@ const BookDetailPage = async ({ params }: { params: { id: string } }) => {
                         </div>
 
                         <div className="flex gap-4">
-                            <button className="btn btn-success mt-9 rounded-full px-7 text-white">
-                                Add to reading list
-                            </button>
-                            <button className="btn btn-secondary mt-9 rounded-full px-7 text-white">
-                                Add to Wishlist list
-                            </button>
+                            <ReadBtn book={book} />
+                            <WishBtn book={book} />
                         </div>
                     </div>
                 </section>
